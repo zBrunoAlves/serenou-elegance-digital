@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Cart from "./Cart";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,35 +26,39 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <button
-              onClick={() => scrollToSection("inicio")}
-              className="text-foreground hover:text-ocean-deep transition-smooth"
-            >
-              Início
-            </button>
-            <button
-              onClick={() => scrollToSection("catalogo")}
-              className="text-foreground hover:text-ocean-deep transition-smooth"
-            >
-              Catálogo
-            </button>
-            <button
-              onClick={() => scrollToSection("avaliacoes")}
-              className="text-foreground hover:text-ocean-deep transition-smooth"
-            >
-              Avaliações
-            </button>
-            <button
-              onClick={() => scrollToSection("contato")}
-              className="text-foreground hover:text-ocean-deep transition-smooth"
-            >
-              Contato
-            </button>
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex space-x-8">
+              <button
+                onClick={() => scrollToSection("inicio")}
+                className="text-foreground hover:text-ocean-deep transition-smooth"
+              >
+                Início
+              </button>
+              <button
+                onClick={() => scrollToSection("catalogo")}
+                className="text-foreground hover:text-ocean-deep transition-smooth"
+              >
+                Catálogo
+              </button>
+              <button
+                onClick={() => scrollToSection("avaliacoes")}
+                className="text-foreground hover:text-ocean-deep transition-smooth"
+              >
+                Avaliações
+              </button>
+              <button
+                onClick={() => scrollToSection("contato")}
+                className="text-foreground hover:text-ocean-deep transition-smooth"
+              >
+                Contato
+              </button>
+            </nav>
+            <Cart />
+          </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and cart */}
+          <div className="md:hidden flex items-center space-x-2">
+            <Cart />
             <Button
               variant="ghost"
               size="sm"

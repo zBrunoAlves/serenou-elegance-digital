@@ -1,5 +1,7 @@
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useCart } from "@/hooks/useCart";
 
 interface Product {
   id: number;
@@ -16,6 +18,8 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const { addToCart } = useCart();
+  
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
@@ -60,10 +64,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <span className="text-2xl font-semibold text-ocean-deep">
             {product.price}
           </span>
-          <span className="text-sm text-muted-foreground">
-            Consulte disponibilidade
-          </span>
         </div>
+
+        <Button 
+          onClick={() => addToCart(product)}
+          className="w-full bg-coral-sunset hover:bg-coral-sunset/90 text-white mt-4"
+        >
+          Adicionar ao Carrinho
+        </Button>
       </CardContent>
     </Card>
   );
