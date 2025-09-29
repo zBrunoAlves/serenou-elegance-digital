@@ -47,6 +47,19 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // SERENOU custom colors
+        ocean: {
+          deep: "hsl(var(--ocean-deep))",
+          light: "hsl(var(--ocean-light))",
+        },
+        sand: {
+          warm: "hsl(var(--sand-warm))",
+          light: "hsl(var(--sand-light))",
+        },
+        coral: {
+          sunset: "hsl(var(--coral-sunset))",
+          soft: "hsl(var(--coral-soft))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
