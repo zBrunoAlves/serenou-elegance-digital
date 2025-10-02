@@ -1,195 +1,92 @@
 import ProductCard from "./ProductCard";
-import bikiniCoralTop from "@/assets/products/bikini-coral-top.jpg";
-import swimsuitOceanBlue from "@/assets/products/swimsuit-ocean-blue.jpg";
-import coverupLinenBeige from "@/assets/products/coverup-linen-beige.jpg";
-import shortsSandLight from "@/assets/products/shorts-sand-light.jpg";
-import swimsuitBlackElegant from "@/assets/products/swimsuit-black-elegant.jpg";
-import bikiniWhiteTropical from "@/assets/products/bikini-white-tropical.jpg";
-import dressNavyCover from "@/assets/products/dress-navy-cover.jpg";
-import shirtStripedBeach from "@/assets/products/shirt-striped-beach.jpg";
-import bikiniMintBottom from "@/assets/products/bikini-mint-bottom.jpg";
-import pantsWhiteCasual from "@/assets/products/pants-white-casual.jpg";
+import conjuntoRoma from "@/assets/products/conjuntoRoma.jpg";
+import conjuntoRoma2 from "@/assets/products/conjuntoRoma2.jpg";
+import conjuntoRoma3 from "@/assets/products/conjuntoRoma3.jpg";
+import conjuntoRoma4 from "@/assets/products/conjuntoRoma4.jpg";
+import vestidoMaresias from "@/assets/products/vestidoMaresias.jpg";
+import vestidoMaresias2 from "@/assets/products/vestidoMaresias2.jpg";
+import vestidoMaresias3 from "@/assets/products/vestidoMaresias3.jpg";
+import vestidoMaresias4 from "@/assets/products/vestidoMaresias4.jpg";
+import vestidoMaresias5 from "@/assets/products/vestidoMaresias5.jpg";
+import conjuntoMari from "@/assets/products/conjuntoMari.jpg"
+import conjuntoMari2 from "@/assets/products/conjuntoMari2.jpg"
+import conjuntoMari3 from "@/assets/products/conjuntoMari3.jpg"
+import conjuntoMari4 from "@/assets/products/conjuntoMari4.jpg"
+import conjuntoMari5 from "@/assets/products/conjuntoMari5.jpg"
+import conjuntoBuzios from "@/assets/products/conjuntoBuzios.jpg"
+import macacaoCamburi from "@/assets/products/macacaoCamburi.jpg"
+import macacaoCamburi2 from "@/assets/products/macacaoCamburi2.jpg"
+import conjuntoThay from "@/assets/products/conjuntoThay.jpg"
+import conjuntoThay2 from "@/assets/products/conjuntoThay2.jpg"
+import conjuntoThay3 from "@/assets/products/conjuntoThay3.jpg"
+import conjuntoThay4 from "@/assets/products/conjuntoThay4.jpg"
 
 const products = [
   {
     id: 1,
-    name: "Biquíni Coral Sunset",
-    price: "R$ 189,90",
-    description: "Top biquíni em tom coral suave, ideal para dias ensolarados na praia. Tecido de secagem rápida.",
-    image: bikiniCoralTop,
+    name: "Conjunto Roma",
+    price: "R$ 139,00",
+    description:
+      "Em corte de alfaiataria com shorts-saia e detalhes de botões elegantes, disponível nas cores preto, off white, nude e rosa delicado.(Para adicionar ao carrinho, selecione o tamanho desejado e finalize a escolha corretamente.)",
+    images: [conjuntoRoma, conjuntoRoma2, conjuntoRoma3, conjuntoRoma4],
     rating: 5,
     reviews: 24,
+    sizes: ["M", "G"],
   },
   {
     id: 2,
-    name: "Maiô Ocean Blue",
-    price: "R$ 249,90",
-    description: "Maiô elegante em azul oceano, com corte moderno e confortável. Perfeito para look sofisticado.",
-    image: swimsuitOceanBlue,
+    name: "Vestido Maresias",
+    price: "R$ 139,00",
+    description:
+      "No tecido de algodão, alça com regulagem e elástico nas costas para maior conforto, com amarração frontal que faz toda a diferença.\n\n(Para adicionar ao carrinho, selecione o tamanho desejado antes de finalizar a compra.)",
+    images: [vestidoMaresias, vestidoMaresias2, vestidoMaresias3, vestidoMaresias4, vestidoMaresias5],
     rating: 5,
     reviews: 18,
+    sizes: ["M", "G", "GG"],
   },
   {
     id: 3,
-    name: "Saída de Praia Linho",
-    price: "R$ 159,90",
-    description: "Saída de praia em linho natural bege, leve e fluida. Versatilidade para praia e cidade.",
-    image: coverupLinenBeige,
+    name: "Conjunto Mari",
+    price: "R$ 129,00",
+    description:
+      "Leve e elegante, modelo frente única com amarração no pescoço, o shorts é shorts-saia, tornando a peça ainda mais única, com elástico na cintura para maior conforto.\n\n(Para adicionar ao carrinho, selecione o tamanho antes.)",
+    images: [conjuntoMari, conjuntoMari2, conjuntoMari3, conjuntoMari4, conjuntoMari5],
     rating: 4,
     reviews: 31,
+    sizes: ["M", "G"],
   },
   {
     id: 4,
     name: "Short Casual Areia",
-    price: "R$ 129,90",
-    description: "Short casual em tom areia, tecido leve e respirável. Conforto para o dia todo.",
-    image: shortsSandLight,
+    price: "R$ 89,00",
+    description:
+      "Ou melhor dizendo, o trijunto Búzios acompanha a parte de cima, a de baixo e ainda inclui uma saia de tule, deixando seu look muito mais elegante.\n\n(Para adicionar ao carrinho, selecione o tamanho corretamente antes.)",
+    images: [conjuntoBuzios],
     rating: 5,
     reviews: 12,
+    sizes: ["P", "M", "G"],
   },
   {
     id: 5,
     name: "Maiô Black Elegance",
-    price: "R$ 279,90",
-    description: "Maiô preto clássico com design atemporal. Modelagem que valoriza a silhueta feminina.",
-    image: swimsuitBlackElegant,
+    price: "R$ 139,99",
+    description:
+      "No jeans leve de viscose azul, com caimento perfeito e confortável. Peça indispensável na mala de viagem, perfeita para qualquer ocasião casual ou especial.\n\n(Para adicionar ao carrinho, selecione o tamanho desejado antes de finalizar.)",
+    images: [macacaoCamburi, macacaoCamburi2],
     rating: 5,
     reviews: 29,
+    sizes: ["M", "G", "GG"],
   },
   {
     id: 6,
-    name: "Biquíni Tropical White",
-    price: "R$ 199,90",
-    description: "Biquíni branco com estampa tropical delicada. Peça versátil para todas as ocasiões.",
-    image: bikiniWhiteTropical,
+    name: "Conjunto Thay",
+    price: "R$ 139,99",
+    description:
+      "Nosso lançamento da semana inclui calça pantalona e cropped com amarração cruzada, deixando seu look mais único, disponível em três cores para arrasar.\n\n(Para adicionar ao carrinho, selecione o tamanho desejado corretamente.)",
+    images: [conjuntoThay, conjuntoThay2, conjuntoThay3, conjuntoThay4],
     rating: 4,
     reviews: 22,
-  },
-  {
-    id: 7,
-    name: "Vestido Navy Cover",
-    price: "R$ 179,90",
-    description: "Vestido saída de praia em azul marinho, elegante e confortável. Perfeito para pós-praia.",
-    image: dressNavyCover,
-    rating: 5,
-    reviews: 16,
-  },
-  {
-    id: 8,
-    name: "Camisa Listrada Beach",
-    price: "R$ 139,90",
-    description: "Camisa listrada estilo náutico, ideal para looks casuais de praia. Tecido leve e fresco.",
-    image: shirtStripedBeach,
-    rating: 4,
-    reviews: 19,
-  },
-  {
-    id: 9,
-    name: "Biquíni Mint Fresh",
-    price: "R$ 169,90",
-    description: "Calcinha de biquíni em tom mint refrescante. Combina com diversos tops da coleção.",
-    image: bikiniMintBottom,
-    rating: 5,
-    reviews: 15,
-  },
-  {
-    id: 10,
-    name: "Calça Casual White",
-    price: "R$ 149,90",
-    description: "Calça branca casual em tecido fluido. Versatilidade para praia e cidade com muito estilo.",
-    image: pantsWhiteCasual,
-    rating: 4,
-    reviews: 27,
-  },
-  {
-    id: 11,
-    name: "Biquíni Coral Clássico",
-    price: "R$ 179,90",
-    description: "Conjunto completo em coral vibrante. Design clássico com toque moderno e confortável.",
-    image: bikiniCoralTop,
-    rating: 5,
-    reviews: 33,
-  },
-  {
-    id: 12,
-    name: "Maiô Ocean Premium",
-    price: "R$ 289,90",
-    description: "Versão premium do maiô azul oceano com detalhes exclusivos e acabamento superior.",
-    image: swimsuitOceanBlue,
-    rating: 5,
-    reviews: 21,
-  },
-  {
-    id: 13,
-    name: "Saída Linho Natural",
-    price: "R$ 169,90",
-    description: "Peça em linho 100% natural, cor bege neutra. Leveza e sofisticação para o verão.",
-    image: coverupLinenBeige,
-    rating: 4,
-    reviews: 25,
-  },
-  {
-    id: 14,
-    name: "Short Areia Premium",
-    price: "R$ 139,90",
-    description: "Short premium em tom areia com modelagem aprimorada. Conforto e estilo únicos.",
-    image: shortsSandLight,
-    rating: 5,
-    reviews: 18,
-  },
-  {
-    id: 15,
-    name: "Maiô Black Edition",
-    price: "R$ 299,90",
-    description: "Edição especial do maiô preto com detalhes dourados. Luxo e elegância em uma peça.",
-    image: swimsuitBlackElegant,
-    rating: 5,
-    reviews: 14,
-  },
-  {
-    id: 16,
-    name: "Biquíni Tropical Print",
-    price: "R$ 209,90",
-    description: "Estampa tropical exclusiva em base branca. Conjunto completo para looks únicos.",
-    image: bikiniWhiteTropical,
-    rating: 4,
-    reviews: 28,
-  },
-  {
-    id: 17,
-    name: "Vestido Navy Luxe",
-    price: "R$ 199,90",
-    description: "Vestido saída de praia luxe em azul marinho. Tecido nobre e caimento perfeito.",
-    image: dressNavyCover,
-    rating: 5,
-    reviews: 20,
-  },
-  {
-    id: 18,
-    name: "Camisa Náutica Strips",
-    price: "R$ 159,90",
-    description: "Camisa náutica com listras clássicas. Estilo atemporal para looks de verão.",
-    image: shirtStripedBeach,
-    rating: 4,
-    reviews: 23,
-  },
-  {
-    id: 19,
-    name: "Biquíni Mint Collection",
-    price: "R$ 189,90",
-    description: "Peça da coleção mint com modelagem especial. Frescor e modernidade em uma só peça.",
-    image: bikiniMintBottom,
-    rating: 5,
-    reviews: 17,
-  },
-  {
-    id: 20,
-    name: "Calça Resort White",
-    price: "R$ 169,90",
-    description: "Calça resort branca em alfaiataria leve. Elegância casual para todos os momentos.",
-    image: pantsWhiteCasual,
-    rating: 4,
-    reviews: 26,
+    sizes: ["M", "G", "GG"],
   },
 ];
 
@@ -202,8 +99,8 @@ const CatalogSection = () => {
             Nossa Coleção
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Descubra peças únicas que combinam estilo, conforto e elegância 
-            para todos os momentos do seu dia
+            Descubra peças únicas que combinam estilo, conforto e elegância para
+            todos os momentos do seu dia
           </p>
         </div>
 

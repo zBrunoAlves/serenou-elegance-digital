@@ -91,7 +91,7 @@ const ReviewsSection = () => {
             href="https://www.instagram.com/serenoubeach"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-gradient-ocean text-white px-8 py-3 rounded-md hover:opacity-90 transition-smooth font-medium shadow-elegant"
+            className="inline-flex items-center bg-gradient-ocean text-ocean-deep px-8 py-3 rounded-md hover:opacity-90 transition-smooth font-medium shadow-elegant"
           >
             @serenoubeach
           </a>

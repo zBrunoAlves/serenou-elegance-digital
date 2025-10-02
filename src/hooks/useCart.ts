@@ -9,85 +9,57 @@ export interface CartItem {
 }
 
 export const useCart = () => {
-  const [items, setItems] = useState<CartItem[]>([]);
-
-  // Load cart from localStorage on mount
-  useEffect(() => {
-    const savedCart = localStorage.getItem('serenou-cart');
-    if (savedCart) {
-      setItems(JSON.parse(savedCart));
+  const [items, setItems] = useState<CartItem[]>(() => {
+    if (typeof window !== "undefined") {
+      const savedCart = localStorage.getItem('serenou-cart');
+      return savedCart ? JSON.parse(savedCart) : [];
     }
-  }, []);
+    return [];
+  });
 
-  // Save cart to localStorage whenever items change
+  // Persistência
   useEffect(() => {
     localStorage.setItem('serenou-cart', JSON.stringify(items));
   }, [items]);
 
   const addToCart = (product: { id: number; name: string; price: string; image: string }) => {
-    setItems(currentItems => {
-      const existingItem = currentItems.find(item => item.id === product.id);
-      
+    setItems(prevItems => {
+      const existingItem = prevItems.find(item => item.id === product.id);
       if (existingItem) {
-        return currentItems.map(item =>
+        // Incrementa baseado no estado atual, não no localStorage
+        return prevItems.map(item =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
-      
-      return [...currentItems, { ...product, quantity: 1 }];
+      return [...prevItems, { ...product, quantity: 1 }];
     });
   };
 
   const updateQuantity = (id: number, quantity: number) => {
-    if (quantity <= 0) {
-      removeFromCart(id);
-      return;
-    }
-    
-    setItems(currentItems =>
-      currentItems.map(item =>
-        item.id === id ? { ...item, quantity } : item
-      )
+    setItems(prevItems =>
+      prevItems
+        .map(item => (item.id === id ? { ...item, quantity } : item))
+        .filter(item => item.quantity > 0)
     );
   };
 
   const removeFromCart = (id: number) => {
-    setItems(currentItems => currentItems.filter(item => item.id !== id));
+    setItems(prevItems => prevItems.filter(item => item.id !== id));
   };
 
-  const clearCart = () => {
-    setItems([]);
-  };
-
-  const getTotalItems = () => {
-    return items.reduce((total, item) => total + item.quantity, 0);
-  };
-
-  const generateWhatsAppMessage = () => {
-    const productList = items
-      .map(item => `- ${item.quantity}x ${item.name}`)
-      .join('\n');
-    
-    return encodeURIComponent(
-      `Olá, estava no site da SERENOU e gostaria de adquirir os seguintes produtos:\n${productList}`
-    );
-  };
+  const getTotalItems = () =>
+    items.reduce((total, item) => total + item.quantity, 0);
 
   const checkout = () => {
-    const message = generateWhatsAppMessage();
-    const whatsappUrl = `https://wa.me/5511984487394?text=${message}`;
-    window.open(whatsappUrl, '_blank');
+    if (items.length === 0) return;
+    const message = encodeURIComponent(
+      "Olá, gostaria de comprar:\n" +
+      items.map(i => `- ${i.quantity}x ${i.name}`).join("\n")
+    );
+    window.open(`https://wa.me/5511984487394?text=${message}`, "_blank");
   };
 
-  return {
-    items,
-    addToCart,
-    updateQuantity,
-    removeFromCart,
-    clearCart,
-    getTotalItems,
-    checkout
-  };
+  return { items, addToCart, updateQuantity, removeFromCart, getTotalItems, checkout };
 };
