@@ -9,10 +9,10 @@ interface Product {
   name: string;
   price: string;
   description: string;
-  images: string[]; // várias imagens
+  images: string[];
   rating: number;
   reviews: number;
-  sizes?: string[]; // tamanhos disponíveis
+  sizes?: string[];
 }
 
 interface ProductCardProps {
@@ -86,7 +86,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </p>
         </div>
 
-        {/* Tamanhos */}
+        {}
         {product.sizes && product.sizes.length > 0 && (
           <div className="flex gap-2 mb-2">
             {product.sizes.map((size) => (
@@ -105,7 +105,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </div>
         )}
 
-        {/* Rating */}
+        {}
         <div className="flex items-center space-x-2">
           <div className="flex">{renderStars(product.rating)}</div>
           <span className="text-sm text-muted-foreground">
@@ -113,18 +113,18 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </span>
         </div>
 
-        {/* Preço */}
+        {}
         <div className="flex justify-between items-center pt-2">
           <span className="text-2xl font-semibold text-ocean-deep">
             {product.price}
           </span>
         </div>
 
-        {/* Botão de adicionar ao carrinho */}
+        {}
         <Button
           onClick={() => addToCart({ ...product, selectedSize })}
           className="w-full bg-coral-sunset hover:bg-coral-sunset/90 text-white mt-4"
-          disabled={!selectedSize} // só permite adicionar se um tamanho estiver selecionado
+          disabled={!selectedSize}
         >
           Adicionar ao Carrinho
         </Button>

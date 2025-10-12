@@ -1,7 +1,6 @@
-// src/contexts/CartContext.tsx
+
 import { createContext, useState, useEffect, useContext, ReactNode, FC } from "react";
 
-// 1. Definir a interface do item e do valor do contexto
 export interface CartItem {
   id: number;
   name: string;
@@ -26,7 +25,6 @@ interface CartContextValue {
   checkout: () => void;
 }
 
-// 2. Criar o Contexto
 const CartContext = createContext<CartContextValue | undefined>(undefined);
 
 interface CartProviderProps {
@@ -68,7 +66,7 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
           id: product.id,
           name: product.name,
           price: product.price,
-          image: product.images[0], // pega a primeira imagem do array
+          image: product.images[0],
           selectedSize: product.selectedSize,
           quantity: 1,
         },
@@ -126,7 +124,6 @@ export const CartProvider: FC<CartProviderProps> = ({ children }) => {
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
-// 3. Hook customizado
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) throw new Error("useCart must be used within a CartProvider");

@@ -18,14 +18,14 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border shadow-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {}
           <div className="flex-shrink-0">
             <h1 className="text-2xl font-bold text-ocean-deep tracking-wide">
               SERENOU
             </h1>
           </div>
 
-          {/* Desktop Navigation */}
+          {}
           <div className="hidden md:flex items-center space-x-8">
             <nav className="flex space-x-8">
               <button
@@ -56,7 +56,7 @@ const Header = () => {
             <Cart />
           </div>
 
-          {/* Mobile menu button and cart */}
+          {}
           <div className="md:hidden flex items-center space-x-2">
             <Cart />
             <Button
@@ -69,7 +69,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border bg-background">
             <nav className="flex flex-col space-y-3">

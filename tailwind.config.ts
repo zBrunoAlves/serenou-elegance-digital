@@ -47,7 +47,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // SERENOU custom colors
         ocean: {
           deep: "hsl(var(--ocean-deep))",
           light: "hsl(var(--ocean-light))",

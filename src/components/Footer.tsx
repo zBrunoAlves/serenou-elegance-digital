@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-ocean-deep text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Brand */}
+          {}
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-bold mb-4 tracking-wide">SERENOU</h3>
             <p className="text-white/80 mb-4 leading-relaxed">
@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {}
           <div className="text-center">
             <h4 className="text-lg font-semibold mb-4">Links Rápidos</h4>
             <ul className="space-y-2">
@@ -71,7 +71,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {}
           <div className="text-center md:text-right">
             <h4 className="text-lg font-semibold mb-4">Contato</h4>
             <div className="space-y-3">

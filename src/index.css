@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* SERENOU Design System - Elegant Beachwear & Casual Fashion
-All colors MUST be HSL.
-*/
 
 @layer base {
   :root {
-    /* Neutral Base - Warm sand and ocean inspired */
+    
     --background: 30 25% 98%;
     --foreground: 30 8% 15%;
 
@@ -18,19 +15,18 @@ All colors MUST be HSL.
     --popover: 30 20% 97%;
     --popover-foreground: 30 8% 15%;
 
-    /* Primary - Deep Ocean Blue */
+    
     --primary: 200 45% 25%;
     --primary-foreground: 30 25% 98%;
 
-    /* Secondary - Soft Sand */
+    
     --secondary: 35 35% 88%;
     --secondary-foreground: 30 8% 15%;
 
-    /* Muted - Light coastal tones */
     --muted: 35 20% 92%;
     --muted-foreground: 30 8% 45%;
 
-    /* Accent - Coral/Sunset */
+
     --accent: 15 65% 75%;
     --accent-foreground: 30 8% 15%;
 
@@ -41,7 +37,6 @@ All colors MUST be HSL.
     --input: 35 25% 85%;
     --ring: 200 45% 25%;
 
-    /* Custom SERENOU tokens */
     --ocean-deep: 200 45% 25%;
     --ocean-light: 200 35% 45%;
     --sand-warm: 35 35% 88%;
@@ -49,12 +44,10 @@ All colors MUST be HSL.
     --coral-sunset: 15 65% 75%;
     --coral-soft: 15 45% 85%;
     
-    /* Gradients */
     --gradient-ocean: linear-gradient(135deg, hsl(var(--ocean-deep)), hsl(var(--ocean-light)));
     --gradient-sunset: linear-gradient(135deg, hsl(var(--coral-sunset)), hsl(var(--coral-soft)));
     --gradient-sand: linear-gradient(180deg, hsl(var(--sand-light)), hsl(var(--sand-warm)));
     
-    /* Shadows */
     --shadow-soft: 0 4px 20px hsl(var(--ocean-deep) / 0.1);
     --shadow-elegant: 0 8px 30px hsl(var(--ocean-deep) / 0.15);
     --shadow-floating: 0 12px 40px hsl(var(--ocean-deep) / 0.2);
@@ -134,7 +127,6 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-light antialiased;
   }
 
-  /* Custom SERENOU styles */
   .gradient-ocean {
     background: var(--gradient-ocean);
   }
@@ -179,7 +171,6 @@ All colors MUST be HSL.
     background-color: hsl(var(--sand-light));
   }
 
-  /* Smooth transitions */
   .transition-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
