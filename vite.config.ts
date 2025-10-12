@@ -5,7 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+<<<<<<< HEAD
   base: '/serenou-elegance-digital/',
+=======
+>>>>>>> 9254d7cf1a7786fffdfb234016b1b77b344ab7ee
   server: {
     host: "::",
     port: 8080,
